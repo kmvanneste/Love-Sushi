@@ -9,16 +9,16 @@ var sushi = require("../models/sushi.js");
 router.get("/", function(req, res) {
     sushi.all(function(data) {
       var hbsObject = {
-        cats: data
+        sushi: data
       };
       console.log(hbsObject);
       res.render("index", hbsObject);
     });
   });
   
-  router.post("/api/cats", function(req, res) {
+  router.post("/api/sushi", function(req, res) {
     sushi.create([
-      "sushi", "prepared"
+      "name", "prepared"
     ], [
       req.body.name, req.body.prepared
     ], function(result) {
@@ -27,7 +27,7 @@ router.get("/", function(req, res) {
     });
   });
   
-  router.put("/api/cats/:id", function(req, res) {
+  router.put("/api/sushi/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
     console.log("condition", condition);
@@ -44,7 +44,7 @@ router.get("/", function(req, res) {
     });
   });
   
-  router.delete("/api/cats/:id", function(req, res) {
+  router.delete("/api/sushi/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
     sushi.delete(condition, function(result) {

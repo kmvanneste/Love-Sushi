@@ -1,0 +1,38 @@
+<h1>Love Sushi</h1>
+
+<h2>Prepared:</h2>
+
+<ul>
+  {{#each sushi}}
+    {{#unless prepared}}
+      {{> sushi/sushi-block prepared=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Eaten:</h2>
+
+<ul>
+  {{#each sushi}}
+    {{#if prepared}}
+      {{> sushi/sushi-block prepared=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Order a Roll</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Your order:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="prepared">Would you like it prepared or have you already eaten it?</label><br>
+    <input type="radio" name="prepared" value="1" checked> Prepared<br>
+    <input type="radio" name="prepared" value="0"> Eaten
+  </div>
+
+  <button type="submit">Order Up!</button>
+</form>
