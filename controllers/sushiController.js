@@ -2,7 +2,7 @@ var express = require("express");
 
 var router = express.Router();
 
-//Importing the (sushi.js) file to use its database functions
+//Importing the (sushi.js) file from the model
 var sushi = require("../models/sushi.js");
 
 //Routes using Route.get
