@@ -1,12 +1,25 @@
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: process.env.MYSQL_KEY,
-  database: "sushi_db"
-});
+var connection;
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: process.env.MYSQL_KEY,
+    database: "sushi_db",
+  });
+}
+
+// var connection = mysql.createConnection({
+//   host: "localhost",
+//   port: 3306,
+//   user: "root",
+//   password: ,
+//   database: "sushi_db"
+// });
 
 connection.connect(function(err) {
     if (err) {
@@ -16,4 +29,4 @@ connection.connect(function(err) {
     console.log("connected as id " + connection.threadId);
   });
 
-  module.exports = connection;
+module.exports = connection;
