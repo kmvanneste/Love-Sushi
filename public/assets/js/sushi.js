@@ -5,7 +5,7 @@ $(function() {
       var newPreparedState = $(this).data("newsushi");
   
       var newSushiRoll = {
-        preparation: newPreparedState
+        prepared: newPreparedState
       };
   
       // Send the PUT request.
@@ -27,7 +27,7 @@ $(function() {
   
       var newSushi = {
         name: $("#ca").val().trim(),
-        preparation: $("[name=prepared]:checked").val().trim()
+        prepared: $("[name=prepared]:checked").val().trim()
       };
   
       // Send the POST request.
