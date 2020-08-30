@@ -2,19 +2,19 @@
 $(function() {
     $(".change-sushi").on("click", function(event) {
       var id = $(this).data("id");
-      var newSleep = $(this).data("newsleep");
+      var newPreparedState = $(this).data("newsushi");
   
-      var newSleepState = {
-        sleepy: newSleep
+      var newSushiRoll = {
+        preparation: newPreparedState
       };
   
       // Send the PUT request.
       $.ajax("/api/sushi/" + id, {
         type: "PUT",
-        data: newSleepState
+        data: newSushiRoll
       }).then(
         function() {
-          console.log("changed sleep to", newSleep);
+          console.log("changed to", newPreparedState);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -27,7 +27,7 @@ $(function() {
   
       var newSushi = {
         name: $("#ca").val().trim(),
-        prepared: $("[name=prepared]:checked").val().trim()
+        preparation: $("[name=prepared]:checked").val().trim()
       };
   
       // Send the POST request.
@@ -43,7 +43,7 @@ $(function() {
       );
     });
   
-    $(".delete-cat").on("click", function(event) {
+    $(".delete-sushi").on("click", function(event) {
       var id = $(this).data("id");
   
       // Send the DELETE request.
@@ -51,7 +51,7 @@ $(function() {
         type: "DELETE"
       }).then(
         function() {
-          console.log("deleted cat", id);
+          console.log("deleted sushi", id);
           // Reload the page to get the updated list
           location.reload();
         }
