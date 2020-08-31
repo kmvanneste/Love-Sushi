@@ -17,7 +17,7 @@ if (process.env.JAWSDB_URL) {
 //   host: "localhost",
 //   port: 3306,
 //   user: "root",
-//   password: ,
+//   password: process.env.MYSQL_KEY,
 //   database: "sushi_db"
 // });
 
