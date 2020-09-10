@@ -4,7 +4,7 @@ A sushi logger utilizing MySQL, Node, Express, Handlebars, and a homemade ORM (y
 ## Table of Contents
 1. [About](#about)
 2. [Languages Used](#languages)
-3. [Access and Appearance](#access) 
+3. [Access](#access) 
 
 ## About <a name="about"></a>
 
